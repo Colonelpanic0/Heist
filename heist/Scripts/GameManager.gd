@@ -5,8 +5,10 @@ extends Node2D
 @export var statusbar_prefab: PackedScene
 
 @export var guest_generator: PackedScene
+@export var worker_generator: PackedScene
+@export var security_generator: PackedScene
 
-var current_level: int = 2
+@export var current_level: int = 0
 
 const PREFAB_HEIGHT = 116
 const VIEWPORT_HEIGHT = 648
@@ -61,5 +63,16 @@ func build_generators():
 		0:
 			var instance = guest_generator.instantiate()
 			instance.position.y = start_y + (3*PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
+			instance.position.x=VIEWPORT_WIDTH
+			instance.max_npcs=10
+			add_child(instance)
+			
+			
+			instance = worker_generator.instantiate()
+			instance.position.y = start_y + (2*PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
+			instance.position.x=VIEWPORT_WIDTH
+			add_child(instance)
+			instance = security_generator.instantiate()
+			instance.position.y = start_y + (PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
 			instance.position.x=VIEWPORT_WIDTH
 			add_child(instance)

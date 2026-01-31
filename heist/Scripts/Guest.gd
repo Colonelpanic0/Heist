@@ -5,7 +5,7 @@ var direction = -1  # Start moving left
 var time_until_turn = 0.0
 
 func _ready():
-	time_until_turn = randf_range(7.0, 10.0)
+	time_until_turn = randf_range(7.0, 12.0)
 
 func _physics_process(delta):
 	velocity.x = direction * speed
@@ -14,12 +14,12 @@ func _physics_process(delta):
 	time_until_turn -= delta
 	if time_until_turn <= 0:
 		direction *= -1
-		time_until_turn = randf_range(1.0, 3.0)
+		time_until_turn = randf_range(2.0, 7.0)
 	
 	# Turn around at walls
 	if is_on_wall():
 		direction *= -1
-		time_until_turn = randf_range(1.0, 3.0)
+		time_until_turn = randf_range(3.0, 8.0)
 	
 	move_and_slide()
 	
