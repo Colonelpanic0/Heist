@@ -10,6 +10,10 @@ extends Node2D
 
 @export var player_prefab: PackedScene
 
+@export var gem_prefab: PackedScene
+
+@export var ascend_prefab: PackedScene
+
 #@export var current_level: int = 0
 
 func _ready():
@@ -70,6 +74,10 @@ func build_generators():
 			instance.position.x=Singleton.VIEWPORT_WIDTH
 			add_child(instance)
 			instance = player_prefab.instantiate()
-			instance.position.y = start_y + (3*Singleton.ROOM_HEIGHT) - Singleton.NPC_HEIGHT - Singleton.FLOOR_HEIGHT
+			instance.position.y = start_y + (Singleton.ROOM_HEIGHT) - Singleton.NPC_HEIGHT - Singleton.FLOOR_HEIGHT
 			instance.position.x = 28
+			add_child(instance)
+			instance = gem_prefab.instantiate()
+			instance.position.y = start_y + (Singleton.ROOM_HEIGHT) - Singleton.NPC_HEIGHT - Singleton.FLOOR_HEIGHT - 20
+			instance.position.x = Singleton.VIEWPORT_WIDTH-75
 			add_child(instance)

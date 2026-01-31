@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcmxif853111o"]
+
+[ext_resource type="Script" uid="uid://d1artm51frnqg" path="res://Scripts/ascend.gd" id="1_2obni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5o76"]
+size = Vector2(41.875, 125)
+
+[node name="Ascend" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_2obni")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 119.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20.0625, 59.5)
+shape = SubResource("RectangleShape2D_l5o76")
