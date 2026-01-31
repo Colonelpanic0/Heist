@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp2fklmpdt0mk"]
+[gd_scene load_steps=5 format=3 uid="uid://cp2fklmpdt0mk"]
 
-[ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scenes/player.gd" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/gun.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/Gun.gd" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(28, 40)
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(5, 5)
 script = ExtResource("1_kyqiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(33, 22)
+texture = ExtResource("2_kyqiw")
+script = ExtResource("3_gntrk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 28.0
