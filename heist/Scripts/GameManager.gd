@@ -8,7 +8,9 @@ extends Node2D
 @export var worker_generator: PackedScene
 @export var security_generator: PackedScene
 
-@export var current_level: int = 0
+@export var player_prefab: PackedScene
+
+#@export var current_level: int = 0
 
 const PREFAB_HEIGHT = 116
 const VIEWPORT_HEIGHT = 648
@@ -27,7 +29,7 @@ func build_level():
 	#var num_prefabs = randi() % 3 + 3  # Random number between 3 and 5
 	
 	# Calculate total height of all prefabs
-	var total_height = (current_level + 3) * PREFAB_HEIGHT
+	var total_height = (Singleton.level + 3) * PREFAB_HEIGHT
 	
 	# Calculate starting Y position to center vertically
 	# Available height is viewport minus status bar
@@ -35,7 +37,7 @@ func build_level():
 	var start_y = (available_height - total_height) / 2.0
 	
 	# Instance and position each prefab
-	for i in range(current_level + 3):
+	for i in range(Singleton.level + 3):
 		# Pick a random prefab from the array
 		var prefab_scene = level_prefabs[randi() % level_prefabs.size()]
 		var instance = prefab_scene.instantiate()
@@ -52,22 +54,20 @@ func build_statusbar():
 	add_child(instance)
 
 func build_generators():
-	var total_height = (current_level + 3) * PREFAB_HEIGHT
+	var total_height = (Singleton.level + 3) * PREFAB_HEIGHT
 	
 	# Calculate starting Y position to center vertically
 	# Available height is viewport minus status bar
 	var available_height = VIEWPORT_HEIGHT - STATUS_BAR_HEIGHT
 	var start_y = (available_height - total_height) / 2.0
 	
-	match (current_level):
+	match (Singleton.level):
 		0:
 			var instance = guest_generator.instantiate()
 			instance.position.y = start_y + (3*PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
 			instance.position.x=VIEWPORT_WIDTH
 			instance.max_npcs=10
 			add_child(instance)
-			
-			
 			instance = worker_generator.instantiate()
 			instance.position.y = start_y + (2*PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
 			instance.position.x=VIEWPORT_WIDTH
@@ -75,4 +75,8 @@ func build_generators():
 			instance = security_generator.instantiate()
 			instance.position.y = start_y + (PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
 			instance.position.x=VIEWPORT_WIDTH
+			add_child(instance)
+			instance = player_prefab.instantiate()
+			instance.position.y = start_y + (3*PREFAB_HEIGHT) - NPC_HEIGHT - FLOOR_HEIGHT
+			instance.position.x = 28
 			add_child(instance)

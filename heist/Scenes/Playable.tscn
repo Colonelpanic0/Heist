@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4g6leg8pwnuf"]
+[gd_scene load_steps=8 format=3 uid="uid://4g6leg8pwnuf"]
 
 [ext_resource type="Script" uid="uid://dq3aho2f3ma7r" path="res://Scripts/GameManager.gd" id="1_p1opm"]
 [ext_resource type="PackedScene" uid="uid://d0lk6xqejg1qw" path="res://Scenes/Floors/Ballroom.tscn" id="2_pgxnl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bj0fywufbma4w" path="res://Scenes/Generators/GuestGen.tscn" id="4_s2sib"]
 [ext_resource type="PackedScene" uid="uid://cnes783axpsq7" path="res://Scenes/Generators/WorkerGen.tscn" id="5_h62u1"]
 [ext_resource type="PackedScene" uid="uid://b37jjurxof18c" path="res://Scenes/Generators/SecurityGen.tscn" id="6_rfruq"]
+[ext_resource type="PackedScene" uid="uid://gi0imuf7agig" path="res://Scenes/Player.tscn" id="7_rfruq"]
 
 [node name="Playable" type="Node2D"]
 script = ExtResource("1_p1opm")
@@ -14,3 +15,4 @@ statusbar_prefab = ExtResource("3_12lg8")
 guest_generator = ExtResource("4_s2sib")
 worker_generator = ExtResource("5_h62u1")
 security_generator = ExtResource("6_rfruq")
+player_prefab = ExtResource("7_rfruq")
