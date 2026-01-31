@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 80.0
+@export var speed = 80.0
 
 var direction = -1  # Start moving left
 var time_until_turn = 0.0
@@ -8,7 +8,7 @@ func _ready():
 	time_until_turn = randf_range(7.0, 10.0)
 
 func _physics_process(delta):
-	velocity.x = direction * SPEED
+	velocity.x = direction * speed
 	
 	# Randomly change direction
 	time_until_turn -= delta

@@ -6,7 +6,7 @@ extends Node2D
 
 @export var guest_generator: PackedScene
 
-var current_level: int = 0
+var current_level: int = 2
 
 const PREFAB_HEIGHT = 116
 const VIEWPORT_HEIGHT = 648

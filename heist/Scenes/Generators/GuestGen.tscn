@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj0fywufbma4w"]
 
-[ext_resource type="Script" uid="uid://cpmegcukviuaf" path="res://Scenes/Generators/guest_gen.gd" id="1_p0763"]
+[ext_resource type="Script" uid="uid://cpmegcukviuaf" path="res://Scripts/guest_gen.gd" id="1_p0763"]
 [ext_resource type="PackedScene" uid="uid://dbef5edeo56su" path="res://Scenes/NPCs/Guest.tscn" id="2_es3ad"]
 
 [node name="GuestGen" type="Node2D"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsg35d52n0wg4"]
+
+[ext_resource type="Script" uid="uid://duw70hom5r32n" path="res://Scripts/Guest.gd" id="1_r0d4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pji50"]
+size = Vector2(28, 40)
+
+[node name="Security" type="Node2D"]
+
+[node name="Security" type="CharacterBody2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_r0d4i")
+speed = 120.0
+
+[node name="ColorRect" type="ColorRect" parent="Security"]
+offset_right = 28.0
+offset_bottom = 40.0
+color = Color(0.7511615, 0.2217108, 0.3389526, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Security"]
+position = Vector2(14, 20)
+shape = SubResource("RectangleShape2D_pji50")
