@@ -8,6 +8,14 @@ extends Node
 @export var gem_collected: bool
 @export var mask : Disguise
 
+const FLOOR_HEIGHT = 19
+const ROOM_HEIGHT = 116
+const GAME_WIDTH = 1152
+const VIEWPORT_HEIGHT = 648
+const VIEWPORT_WIDTH = 1152
+const STATUS_BAR_HEIGHT = 64
+const NPC_HEIGHT = 40
+
 enum Disguise {
 	GUEST,
 	WORKER,
