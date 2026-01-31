@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bx8pbaoegnt4b"]
+
+[node name="Shadow" type="ColorRect"]
+offset_left = 419.0
+offset_right = 459.0
+offset_bottom = 97.0
+color = Color(0, 0, 0, 1)
