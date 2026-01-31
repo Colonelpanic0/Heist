@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cell3ssnmytxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fcrs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vfvc6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(581, 619)
+scale = Vector2(58.725, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6fcrs")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(54, 575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_vfvc6")
