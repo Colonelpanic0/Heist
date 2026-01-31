@@ -77,7 +77,7 @@ func build_generators():
 			instance.position.y = start_y + (Singleton.ROOM_HEIGHT) - Singleton.NPC_HEIGHT - Singleton.FLOOR_HEIGHT
 			instance.position.x = 28
 			add_child(instance)
-			instance = gem_prefab.instantiate()
-			instance.position.y = start_y + (Singleton.ROOM_HEIGHT) - Singleton.NPC_HEIGHT - Singleton.FLOOR_HEIGHT - 20
-			instance.position.x = Singleton.VIEWPORT_WIDTH-75
-			add_child(instance)
+			#instance = gem_prefab.instantiate()
+			#instance.position.y = start_y + (Singleton.ROOM_HEIGHT) - Singleton.NPC_HEIGHT - Singleton.FLOOR_HEIGHT - 20
+			#instance.position.x = Singleton.VIEWPORT_WIDTH-75
+			#add_child(instance)
