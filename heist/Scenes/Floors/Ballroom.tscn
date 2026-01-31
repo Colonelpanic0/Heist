@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d0lk6xqejg1qw"]
+
+[node name="Ballroom" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Floor" type="ColorRect" parent="Node2D"]
+offset_top = 97.0
+offset_right = 1152.0
+offset_bottom = 125.0
+
+[node name="Elevator" type="ColorRect" parent="Node2D"]
+offset_left = 600.0
+offset_right = 640.0
+offset_bottom = 97.0
+color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+
+[node name="Ladder" type="ColorRect" parent="Node2D"]
+offset_left = 300.0
+offset_right = 340.0
+offset_bottom = 97.0
+color = Color(0.8948084, 0, 0.25459093, 1)
