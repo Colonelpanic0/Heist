@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://cn67lk23ne2c5"]
 
 [ext_resource type="Script" path="res://Scripts/gem.gd" id="1_l5o76"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://bal1gy0kn3ltp"]
+
+[ext_resource type="Script" uid="uid://b34a4a4vyn8fd" path="res://Scripts/gem.gd" id="1_l5o76"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://bwrp2g00u5i3c" path="res://Sprites/diamond.png" id="1_ydaat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5o76"]
