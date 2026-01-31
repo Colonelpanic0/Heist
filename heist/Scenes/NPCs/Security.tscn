@@ -5,19 +5,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pji50"]
 size = Vector2(28, 40)
 
-[node name="Security" type="Node2D"]
-
-[node name="Security" type="CharacterBody2D" parent="."]
+[node name="Security" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 16
 script = ExtResource("1_r0d4i")
-speed = 120.0
+speed = 50.0
 
-[node name="ColorRect" type="ColorRect" parent="Security"]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 28.0
 offset_bottom = 40.0
 color = Color(0.7511615, 0.2217108, 0.3389526, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Security"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, 20)
 shape = SubResource("RectangleShape2D_pji50")
+
+[node name="Security" type="Node2D" parent="."]
