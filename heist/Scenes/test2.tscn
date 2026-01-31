@@ -1,25 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cell3ssnmytxw"]
+[gd_scene load_steps=3 format=3 uid="uid://qps2nbegy7aq"]
 
-[ext_resource type="Texture2D" uid="uid://b88ecdcma7rem" path="res://icon.svg" id="1_vfvc6"]
+[ext_resource type="Script" uid="uid://bsts1qgatbxwp" path="res://Scripts/world.gd" id="1_kk8vj"]
+[ext_resource type="PackedScene" uid="uid://cp2fklmpdt0mk" path="res://Scenes/Player.tscn" id="2_fo3s5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fcrs"]
+[node name="World" type="Node2D"]
+script = ExtResource("1_kk8vj")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vfvc6"]
-
-[node name="Node2D" type="Node2D"]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_fo3s5")]
+position = Vector2(316.99997, 165.99998)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(581, 619)
-scale = Vector2(58.725, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_6fcrs")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-5, 4, 119, 2, 121, 652, 243, 650, 245, 510, 312, 508, 299, 654, 586, 650, 841, 639, 933, 512, 1152, 512, 1146, 2, 1257, -2, 1268, 695, 3, 703)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(111, 494)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CapsuleShape2D_vfvc6")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_vfvc6")
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]

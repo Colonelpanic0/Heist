@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnes783axpsq7"]
+
+[ext_resource type="Script" uid="uid://cpmegcukviuaf" path="res://Scripts/guest_gen.gd" id="1_357nh"]
+[ext_resource type="PackedScene" uid="uid://c7ucd6754xvc5" path="res://Scenes/NPCs/Worker.tscn" id="2_357nh"]
+
+[node name="WorkerGen" type="Node2D"]
+
+[node name="WorkerGen" type="Node2D" parent="."]
+script = ExtResource("1_357nh")
+npc_scene = ExtResource("2_357nh")
+max_npcs = 3
+spawn_interval_min = 5.0
+spawn_interval_max = 10.0
