@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0lk6xqejg1qw"]
+[gd_scene load_steps=4 format=3 uid="uid://d0lk6xqejg1qw"]
 
 [ext_resource type="Script" uid="uid://diqpsifbqdecb" path="res://Scripts/ballroom.gd" id="1_811ex"]
+[ext_resource type="PackedScene" uid="uid://c53k8roehrn4x" path="res://Scenes/Floors/Elements/shadow.tscn" id="2_3urrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_811ex"]
 size = Vector2(1152, 19)
 
 [node name="Ballroom" type="Node2D"]
 script = ExtResource("1_811ex")
+shadow_prefab = ExtResource("2_3urrn")
 
 [node name="Floor" type="ColorRect" parent="."]
 offset_top = 97.0
