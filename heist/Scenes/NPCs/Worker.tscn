@@ -5,19 +5,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pji50"]
 size = Vector2(28, 40)
 
-[node name="Worker" type="Node2D"]
-
-[node name="Worker" type="CharacterBody2D" parent="."]
+[node name="Worker" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 16
 script = ExtResource("1_cyqwn")
 speed = 100.0
 
-[node name="ColorRect" type="ColorRect" parent="Worker"]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 28.0
 offset_bottom = 40.0
 color = Color(0.47405815, 0.4584483, 0.12585232, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Worker"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, 20)
 shape = SubResource("RectangleShape2D_pji50")
+
+[node name="Worker" type="Node2D" parent="."]
