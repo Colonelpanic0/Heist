@@ -1,0 +1,28 @@
+extends CharacterBody2D
+const SPEED = 80.0
+
+var direction = -1  # Start moving left
+var time_until_turn = 0.0
+
+func _ready():
+	time_until_turn = randf_range(7.0, 10.0)
+
+func _physics_process(delta):
+	velocity.x = direction * SPEED
+	
+	# Randomly change direction
+	time_until_turn -= delta
+	if time_until_turn <= 0:
+		direction *= -1
+		time_until_turn = randf_range(1.0, 3.0)
+	
+	# Turn around at walls
+	if is_on_wall():
+		direction *= -1
+		time_until_turn = randf_range(1.0, 3.0)
+	
+	move_and_slide()
+	
+	# Despawn if off screen
+	if global_position.x < -50 or global_position.x > get_viewport_rect().size.x + 50:
+		queue_free()
