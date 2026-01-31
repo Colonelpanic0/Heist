@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Heist"
-run/main_scene="uid://qps2nbegy7aq"
+run/main_scene="uid://ydbhv5kp4lx4"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+Singleton="*res://Scripts/singleton.gd"
 
 [display]
 
