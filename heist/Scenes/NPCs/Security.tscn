@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsg35d52n0wg4"]
+[gd_scene load_steps=4 format=3 uid="uid://dsg35d52n0wg4"]
 
 [ext_resource type="Script" uid="uid://duw70hom5r32n" path="res://Scripts/Guest.gd" id="1_r0d4i"]
+[ext_resource type="SpriteFrames" uid="uid://cbndpwcgjofem" path="res://Sprites/Guests/Guest_Male/Guest_Male_Sprites.tres" id="2_vq5b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pji50"]
 size = Vector2(28, 40)
@@ -12,6 +13,7 @@ script = ExtResource("1_r0d4i")
 speed = 50.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 28.0
 offset_bottom = 40.0
 color = Color(0.7511615, 0.2217108, 0.3389526, 1)
@@ -21,3 +23,10 @@ position = Vector2(14, 20)
 shape = SubResource("RectangleShape2D_pji50")
 
 [node name="Security" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_vq5b5")
+animation = &"walk"
+centered = false
+offset = Vector2(-10, 0)

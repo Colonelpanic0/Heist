@@ -19,7 +19,7 @@ func _ready() -> void:
 		var attempts = 0
 		
 		while not valid_position and attempts < 100:
-			new_x = randf_range(50, Singleton.VIEWPORT_WIDTH - 50)
+			new_x = randf_range(150, Singleton.VIEWPORT_WIDTH - 150)
 			valid_position = true
 			
 			# Check distance from all previously placed positions
