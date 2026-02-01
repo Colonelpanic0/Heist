@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://1qqgupbid5wq"]
+
+[ext_resource type="Texture2D" uid="uid://ddref638nchso" path="res://Sprites/Waiters/waiter1/waiter1.png" id="1_qp2hn"]
+[ext_resource type="Texture2D" uid="uid://c6g0e35t8xabr" path="res://Sprites/Waiters/waiter1/waiter2.png" id="2_730a4"]
+[ext_resource type="Texture2D" uid="uid://bycyxqg04u3ys" path="res://Sprites/Waiters/waiter1/waiter3.png" id="3_gsm0h"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qp2hn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_730a4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qp2hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gsm0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qp2hn")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]

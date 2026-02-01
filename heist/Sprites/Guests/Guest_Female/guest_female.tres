@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dp5c7mjcf7drh"]
+
+[ext_resource type="Texture2D" uid="uid://bg15enhsc8n2c" path="res://Sprites/Guests/Guest_Female/guest_female1.png" id="1_s0gji"]
+[ext_resource type="Texture2D" uid="uid://cvyj53rdlegm5" path="res://Sprites/Guests/Guest_Female/guest_female2.png" id="2_y44o1"]
+[ext_resource type="Texture2D" uid="uid://bym8dbv6abk28" path="res://Sprites/Guests/Guest_Female/guest_female3.png" id="3_xxotb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s0gji")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y44o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_s0gji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xxotb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_s0gji")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]

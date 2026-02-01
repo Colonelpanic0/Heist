@@ -1,23 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7ucd6754xvc5"]
+[gd_scene load_steps=4 format=3 uid="uid://c7ucd6754xvc5"]
 
 [ext_resource type="Script" uid="uid://duw70hom5r32n" path="res://Scripts/Guest.gd" id="1_cyqwn"]
+[ext_resource type="SpriteFrames" uid="uid://1qqgupbid5wq" path="res://Sprites/Waiters/waiter1/waiter_animation.tres" id="2_vc1xb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pji50"]
-size = Vector2(28, 40)
+size = Vector2(34, 49)
 
 [node name="Worker" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 16
 script = ExtResource("1_cyqwn")
 speed = 100.0
+guest_m = ExtResource("2_vc1xb")
+guest_f = ExtResource("2_vc1xb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 28.0
 offset_bottom = 40.0
 color = Color(0.47405815, 0.4584483, 0.12585232, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14, 20)
+position = Vector2(17, 24.5)
 shape = SubResource("RectangleShape2D_pji50")
 
 [node name="Worker" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-10, 0)
+sprite_frames = ExtResource("2_vc1xb")
+centered = false

@@ -6,5 +6,5 @@ func _ready():
 func _on_body_entered(body): 
 	Singleton.alarmed = true
 	Singleton.gem_collected = true
-	
+	Singleton.score+=500
 	queue_free() 

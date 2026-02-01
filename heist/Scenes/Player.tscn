@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="SpriteFrames" uid="uid://c1t0i077cccij" path="res://Sprites/Player/Default/Player_Default_Animation.tres" id="2_5ixxa"]
-[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/GUN.png" id="2_kyqiw"]
-[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/GUN.gd" id="3_gntrk"]
+[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/gun.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/Gun.gd" id="3_gntrk"]
 [ext_resource type="PackedScene" uid="uid://dm4g5rmvjoln" path="res://Scenes/Bullet.tscn" id="5_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
