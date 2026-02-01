@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbharkcw7yoid"]
+[gd_scene load_steps=4 format=3 uid="uid://cbharkcw7yoid"]
 
 [ext_resource type="LabelSettings" uid="uid://pp6o120knttj" path="res://Sprites/statusbar.tres" id="1_anw4h"]
 [ext_resource type="Script" uid="uid://b3ira6dg8623f" path="res://Scripts/ui.gd" id="1_wsq8e"]
+[ext_resource type="FontFile" uid="uid://c6oxbi4xm0csc" path="res://Fonts/nokiafc22.ttf" id="2_n73cl"]
 
 [node name="Statusbar" type="Node2D"]
 
@@ -38,6 +39,7 @@ offset_top = -52.0
 offset_right = 125.0
 offset_bottom = -8.0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_n73cl")
 text = "Lives: 3"
 label_settings = ExtResource("1_anw4h")
 
@@ -55,6 +57,7 @@ offset_right = -105.0
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_n73cl")
 text = "Score: 0"
 label_settings = ExtResource("1_anw4h")
 
@@ -72,6 +75,7 @@ offset_right = -15.0
 offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_n73cl")
 text = "Time: 100"
 label_settings = ExtResource("1_anw4h")
 
@@ -89,5 +93,6 @@ offset_right = 188.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_n73cl")
 text = "Bullets: 3"
 label_settings = ExtResource("1_anw4h")
