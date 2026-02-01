@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 @export var playable_scene :PackedScene
 
