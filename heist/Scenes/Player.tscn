@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp2fklmpdt0mk"]
+[gd_scene load_steps=13 format=3 uid="uid://cp2fklmpdt0mk"]
 
 [ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="SpriteFrames" uid="uid://c1t0i077cccij" path="res://Sprites/Player/Default/Player_Default_Animation.tres" id="2_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/GUN.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://bhm52b6jx2hi1" path="res://Sprites/Masks/maintenance_mask.png" id="3_52ee3"]
 [ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/GUN.gd" id="3_gntrk"]
+[ext_resource type="SpriteFrames" uid="uid://con4ksmx1gksj" path="res://Sprites/Player/Guest/player_guest_animation.tres" id="3_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://05328vbwq25g" path="res://Sprites/Masks/party_mask.png" id="3_nn08x"]
+[ext_resource type="SpriteFrames" uid="uid://dox56kjx0jgn5" path="res://Sprites/Player/Maintenance/player_maintenance_anim.tres" id="4_glx4g"]
+[ext_resource type="SpriteFrames" uid="uid://c1hblwbtg8kbc" path="res://Sprites/Player/Waiter/player_waiter_anim.tres" id="5_miouo"]
 [ext_resource type="PackedScene" uid="uid://dm4g5rmvjoln" path="res://Scenes/Bullet.tscn" id="5_nn08x"]
+[ext_resource type="SpriteFrames" uid="uid://jhegdbxygxeo" path="res://Sprites/Player/Security/player_security_anim.tres" id="6_o3h8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(30, 50)
@@ -14,8 +19,10 @@ size = Vector2(30, 50)
 collision_mask = 19
 script = ExtResource("1_kyqiw")
 playerSprite = NodePath("AnimatedSprite2D")
+playerAnims = Array[SpriteFrames]([ExtResource("2_5ixxa"), ExtResource("3_ksbbd"), ExtResource("4_glx4g"), ExtResource("5_miouo"), ExtResource("6_o3h8g")])
 playerMask = NodePath("Mask")
 guestMask = ExtResource("3_nn08x")
+maintneceMask = ExtResource("3_52ee3")
 GUN = NodePath("GUN")
 POS_L = Vector2(-4, 27)
 POS_R = Vector2(33, 27)
@@ -23,6 +30,9 @@ POS_R = Vector2(33, 27)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14, 24)
 sprite_frames = ExtResource("2_5ixxa")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.561481
 metadata/_edit_lock_ = true
 
 [node name="Mask" type="Sprite2D" parent="."]

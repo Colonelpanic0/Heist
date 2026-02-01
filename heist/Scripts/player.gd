@@ -1,7 +1,11 @@
 extends CharacterBody2D
 @export var playerSprite: AnimatedSprite2D
+@export var playerAnims: Array[SpriteFrames] = []
 @export var playerMask: Sprite2D
 @export var guestMask: Texture2D
+@export var maintneceMask: Texture2D
+@export var waiterMask: Texture2D
+@export var securtiyMask: Texture2D
 @export var GUN: Sprite2D
 
 const SPEED = 150.0
@@ -10,6 +14,8 @@ const JUMP_VELOCITY = -300.0
 @export var POS_R = Vector2(20,5)
 @export var looking = 1
 @export var mask = Singleton.Disguise.GUEST
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -59,6 +65,7 @@ func _process(delta: float) -> void:
 		match mask:
 			Singleton.Disguise.GUEST:	
 				Singleton.mask = Singleton.Disguise.WORKER
+				
 				playerMask.texture = guestMask
 				playerMask.visible = true
 			Singleton.Disguise.WORKER:
@@ -68,10 +75,12 @@ func _process(delta: float) -> void:
 			Singleton.Disguise.SECURITY:
 				Singleton.mask = Singleton.Disguise.GUEST
 				playerMask.texture = guestMask
+				playerSprite.sprite_frames = playerAnims[1]
 				playerMask.visible = true
 			_:
 				Singleton.mask = Singleton.Disguise.GUEST
 				playerMask.texture = guestMask
+				playerSprite.sprite_frames = playerAnims[1]
 				playerMask.visible = true
 				
 		

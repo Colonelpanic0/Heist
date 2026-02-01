@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Fire"): 
+	if Input.is_action_just_pressed("Fire") and visible: 
 		if Singleton.bullets >= 1:
 			#Fire bullet
 			var instance = bullet_prefab.instantiate() #creates an instance
