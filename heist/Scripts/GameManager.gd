@@ -17,6 +17,7 @@ extends Node2D
 #@export var current_level: int = 0
 
 func _ready():
+	Singleton.gamestart = true
 	build_level()
 	build_generators()
 	build_statusbar()
