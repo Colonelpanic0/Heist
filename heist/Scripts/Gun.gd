@@ -5,7 +5,7 @@ extends Sprite2D
 @export var bullet_offset: Vector2
 @export var bullet_speed = 4
 @export var bullet_spawn: Node2D
-var hide = false
+#var hide = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -29,10 +29,10 @@ func _process(delta: float) -> void:
 			Singleton.bullets -= 1
 			pass
 		pass
-	if Singleton.hidden and not hide:
+	if Singleton.hidden:
 		self_modulate.a = 0.1
-		hide = true
-	elif not Singleton.hidden and hide:
+		#hide = true
+	elif not Singleton.hidden:
 		self_modulate.a = 1
-		hide = false
+		#hide = false
 	pass
