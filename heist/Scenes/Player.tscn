@@ -1,19 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp2fklmpdt0mk"]
+[gd_scene load_steps=7 format=3 uid="uid://cp2fklmpdt0mk"]
 
 [ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scripts/player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/gun.png" id="2_kyqiw"]
-[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/Gun.gd" id="3_gntrk"]
+[ext_resource type="SpriteFrames" uid="uid://c1t0i077cccij" path="res://Sprites/Player/Default/Player_Default_Animation.tres" id="2_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/GUN.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/GUN.gd" id="3_gntrk"]
+[ext_resource type="PackedScene" uid="uid://dm4g5rmvjoln" path="res://Scenes/Bullet.tscn" id="4_dewec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(28, 40)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("GUN")]
 script = ExtResource("1_kyqiw")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(33, 22)
-texture = ExtResource("2_kyqiw")
-script = ExtResource("3_gntrk")
+GUN = NodePath("AnimatedSprite2D/GUN")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 28.0
@@ -22,3 +20,15 @@ offset_bottom = 40.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, 20)
 shape = SubResource("RectangleShape2D_rpqav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 20)
+sprite_frames = ExtResource("2_5ixxa")
+animation = &"walk"
+
+[node name="GUN" type="Sprite2D" parent="AnimatedSprite2D" node_paths=PackedStringArray("player")]
+position = Vector2(20, 5)
+texture = ExtResource("2_kyqiw")
+script = ExtResource("3_gntrk")
+player = NodePath("../..")
+bullet_prefab = ExtResource("4_dewec")
