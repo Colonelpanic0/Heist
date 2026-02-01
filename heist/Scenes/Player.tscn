@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="SpriteFrames" uid="uid://c1t0i077cccij" path="res://Sprites/Player/Default/Player_Default_Animation.tres" id="2_5ixxa"]
-[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/GUN.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://cpsiylfyr8530" path="res://Sprites/gun.png" id="2_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bhm52b6jx2hi1" path="res://Sprites/Masks/maintenance_mask.png" id="3_52ee3"]
-[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/GUN.gd" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://5a7qlu56fkyl" path="res://Scripts/Gun.gd" id="3_gntrk"]
 [ext_resource type="SpriteFrames" uid="uid://con4ksmx1gksj" path="res://Sprites/Player/Guest/player_guest_animation.tres" id="3_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://05328vbwq25g" path="res://Sprites/Masks/party_mask.png" id="3_nn08x"]
 [ext_resource type="SpriteFrames" uid="uid://dox56kjx0jgn5" path="res://Sprites/Player/Maintenance/player_maintenance_anim.tres" id="4_glx4g"]
@@ -34,7 +34,6 @@ position = Vector2(14, 24)
 sprite_frames = ExtResource("2_5ixxa")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.561481
 metadata/_edit_lock_ = true
 
 [node name="Mask" type="Sprite2D" parent="."]

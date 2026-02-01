@@ -24,6 +24,7 @@ const NPC_HEIGHT = 48
 const SHADOW_HEIGHT = ROOM_HEIGHT - FLOOR_HEIGHT
 
 enum Disguise {
+	SELF = -1,
 	GUEST = 0,
 	MAINTENANCE = 1,
 	WAITER = 2,

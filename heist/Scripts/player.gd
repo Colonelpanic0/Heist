@@ -71,16 +71,18 @@ func _process(delta: float) -> void:
 			Singleton.Disguise.GUEST:
 				mask = Singleton.Disguise.MAINTENANCE
 				playerSprite.sprite_frames = playerAnims[2]
-				update_anim("default")
+				#update_anim("default")
 				playerMask.texture = masks[1]
 				playerMask.visible = true
 			Singleton.Disguise.MAINTENANCE:	
 				mask = Singleton.Disguise.WAITER
-				update_anim("default")
+				#update_anim("default")
+				playerSprite.sprite_frames = playerAnims[3]
 				playerMask.texture = masks[2]
 				playerMask.visible = true	
 			Singleton.Disguise.WAITER:	
 				mask = Singleton.Disguise.SECURITY
+				playerSprite.sprite_frames = playerAnims[4]
 				playerMask.texture = masks[3]
 				playerMask.visible = true	
 			Singleton.Disguise.SECURITY:	
