@@ -25,10 +25,15 @@ sprite_frames = ExtResource("2_5ixxa")
 position = Vector2(15, 25)
 shape = SubResource("RectangleShape2D_rpqav")
 
-[node name="GUN" type="Sprite2D" parent="." node_paths=PackedStringArray("player")]
+[node name="GUN" type="Sprite2D" parent="." node_paths=PackedStringArray("player", "bullet_spawn")]
 position = Vector2(33, 27)
 rotation = -6.2831855
 texture = ExtResource("2_kyqiw")
 script = ExtResource("3_gntrk")
 player = NodePath("..")
 bullet_prefab = ExtResource("5_nn08x")
+bullet_offset = Vector2(7, -4)
+bullet_spawn = NodePath("FirePOS")
+
+[node name="FirePOS" type="Node2D" parent="GUN"]
+position = Vector2(7.0000005, -3.9999988)

@@ -10,6 +10,7 @@ size = Vector2(6.75, 4.5)
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_14k46")
+speed = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vlxeq")
