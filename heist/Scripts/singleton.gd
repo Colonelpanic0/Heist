@@ -69,3 +69,18 @@ func _game_over():
 	mask = Disguise.GUEST
 	hidden = false
 	timer = 0
+	
+func _next_level():
+	gem_collected = false
+	score += 1000
+	alarmed = false
+	mask = Disguise.GUEST
+	hidden = false
+	if level < 2:
+		level += 1
+		get_tree().change_scene_to_file("res://Scenes/playablenew.tscn")
+	else:
+		level = 0
+		loop += 1
+		#Change this to interstitial scene
+		get_tree().change_scene_to_file("res://Scenes/playablenew.tscn")
