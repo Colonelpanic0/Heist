@@ -13,14 +13,14 @@ size = Vector2(30, 50)
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerSprite", "playerMask", "GUN")]
 collision_mask = 19
 script = ExtResource("1_kyqiw")
-playerSprite = NodePath("AnimatedSprite2D")
+playerSprite = NodePath("DefaultSprite")
 playerMask = NodePath("Mask")
 guestMask = ExtResource("3_nn08x")
 GUN = NodePath("GUN")
 POS_L = Vector2(-4, 27)
 POS_R = Vector2(33, 27)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="DefaultSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(14, 24)
 sprite_frames = ExtResource("2_5ixxa")
 animation = &"walk"
