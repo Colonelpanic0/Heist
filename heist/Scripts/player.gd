@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -300.0
 @export var POS_L = Vector2(-20,5)
 @export var POS_R = Vector2(20,5)
 @export var looking = 1
+var hide = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -42,3 +43,13 @@ func _physics_process(delta: float) -> void:
 func get_looking():
 	return looking
 	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Singleton.hidden and not hide:
+		playerSprite.self_modulate.a = 0.1
+		hide = true
+	elif not Singleton.hidden and hide:
+		playerSprite.self_modulate.a = 1
+		hide = false
+		
