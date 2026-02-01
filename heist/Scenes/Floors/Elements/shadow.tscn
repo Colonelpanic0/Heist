@@ -1,7 +1,19 @@
-[gd_scene format=3 uid="uid://c53k8roehrn4x"]
+[gd_scene load_steps=3 format=3 uid="uid://c53k8roehrn4x"]
+
+[ext_resource type="Script" uid="uid://d1qeq8c836qw6" path="res://Scripts/shadow.gd" id="1_2ck1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24s4o"]
+size = Vector2(43, 102)
 
 [node name="Shadow" type="ColorRect"]
-offset_left = 419.0
-offset_right = 459.0
+offset_right = 40.0
 offset_bottom = 97.0
 color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("1_2ck1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19.5, 48)
+shape = SubResource("RectangleShape2D_24s4o")

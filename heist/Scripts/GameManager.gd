@@ -20,6 +20,7 @@ func _ready():
 	build_level()
 	build_generators()
 	build_statusbar()
+	Singleton.timer = 100
 
 func build_level():
 	# Randomly choose how many prefabs to use (3 to 5)

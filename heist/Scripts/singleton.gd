@@ -7,6 +7,11 @@ extends Node
 @export var alarmed: bool
 @export var gem_collected: bool
 @export var mask : Disguise
+@export var hidden: bool
+@export var score: int
+@export var timer: int
+
+var time_accumulator = 0.0
 
 const FLOOR_HEIGHT = 19
 const ROOM_HEIGHT = 116
@@ -32,9 +37,17 @@ func _ready() -> void:
 	level = 0
 	alarmed = false
 	mask = Disguise.GUEST
-	pass # Replace with function body.
+	hidden = false
+	timer = 100
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func _process(delta):
+	time_accumulator += delta
+	if time_accumulator >= 1.0:
+		time_accumulator -= 1.0
+		timer -= 1
+		if timer == 0:
+			lives-=1
+			get_tree().change_scene_to_file("res://Scenes/playablenew.tscn")
+			timer = 100

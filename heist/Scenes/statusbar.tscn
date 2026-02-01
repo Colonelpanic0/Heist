@@ -1,8 +1,76 @@
-[gd_scene format=3 uid="uid://cbharkcw7yoid"]
+[gd_scene load_steps=3 format=3 uid="uid://cbharkcw7yoid"]
+
+[ext_resource type="LabelSettings" uid="uid://pp6o120knttj" path="res://Sprites/statusbar.tres" id="1_anw4h"]
+[ext_resource type="Script" uid="uid://b3ira6dg8623f" path="res://Scripts/ui.gd" id="1_wsq8e"]
 
 [node name="Statusbar" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 64.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wsq8e")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0, 0, 0, 1)
+
+[node name="Lives" type="Label" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -52.0
+offset_right = 125.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "Lives: 3"
+label_settings = ExtResource("1_anw4h")
+
+[node name="Score" type="Label" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 51.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Score: 0"
+label_settings = ExtResource("1_anw4h")
+
+[node name="Time" type="Label" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -49.0
+offset_right = -15.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Time: 100"
+label_settings = ExtResource("1_anw4h")
