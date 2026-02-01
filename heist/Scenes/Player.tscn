@@ -9,9 +9,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(30, 50)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("GUN")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerSprite", "GUN")]
 collision_mask = 19
 script = ExtResource("1_kyqiw")
+playerSprite = NodePath("AnimatedSprite2D")
 GUN = NodePath("GUN")
 POS_L = Vector2(-4, 27)
 POS_R = Vector2(33, 27)

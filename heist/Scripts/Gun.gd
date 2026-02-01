@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 			instance.position.x = position.x + player.looking * bullet_offset #set position etc.
 			instance.position.y = position.y
 			instance.speed = bullet_speed
-			get_parent().add_child(instance) #adds the instance into the scene
+			add_child(instance) #adds the instance into the scene
 			pass
 		pass
 	

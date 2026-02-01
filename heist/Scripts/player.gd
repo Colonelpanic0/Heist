@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var playerSprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var playerSprite: AnimatedSprite2D
 @export var GUN: Sprite2D
 
 const SPEED = 150.0
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 			
 		elif direction <= -1:
 			looking = -1 
-			playerSprite.flip_h = false
+			playerSprite.flip_h = true
 			GUN.flip_h = true
 			GUN.position.x = POS_L.x
 			
