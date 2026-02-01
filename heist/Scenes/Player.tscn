@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dm4g5rmvjoln" path="res://Scenes/Bullet.tscn" id="5_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
-size = Vector2(30, 50)
+size = Vector2(30, 48)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerSprite", "playerMask", "GUN")]
 collision_mask = 19
@@ -32,7 +32,7 @@ position = Vector2(16, 10)
 scale = Vector2(0.53125, 0.47916666)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, 25)
+position = Vector2(15, 24)
 shape = SubResource("RectangleShape2D_rpqav")
 metadata/_edit_lock_ = true
 
