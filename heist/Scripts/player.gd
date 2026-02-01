@@ -26,18 +26,21 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		if direction >= 1: 
+			$AnimatedSprite2D.play("walk")
 			looking = 1
 			playerSprite.flip_h = false
 			GUN.flip_h = false
 			GUN.position.x = POS_R.x
 			
 		elif direction <= -1:
+			$AnimatedSprite2D.play("walk")
 			looking = -1 
 			playerSprite.flip_h = true
 			GUN.flip_h = true
 			GUN.position.x = POS_L.x
 			
 	else:
+		$AnimatedSprite2D.play("default")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
