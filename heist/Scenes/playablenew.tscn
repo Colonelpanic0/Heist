@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnkbuxxsn4t0f"]
+[gd_scene load_steps=10 format=3 uid="uid://cnkbuxxsn4t0f"]
 
 [ext_resource type="Script" uid="uid://dq3aho2f3ma7r" path="res://Scripts/GameManager.gd" id="1_qafiq"]
 [ext_resource type="PackedScene" uid="uid://d0lk6xqejg1qw" path="res://Scenes/Floors/Ballroom.tscn" id="2_mln1u"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b37jjurxof18c" path="res://Scenes/Generators/SecurityGen.tscn" id="5_mvb3p"]
 [ext_resource type="PackedScene" uid="uid://cp2fklmpdt0mk" path="res://Scenes/Player.tscn" id="6_u3avd"]
 [ext_resource type="PackedScene" uid="uid://bal1gy0kn3ltp" path="res://Scenes/Floors/Elements/gemnew.tscn" id="8_mln1u"]
+[ext_resource type="PackedScene" uid="uid://bx8pbaoegnt4b" path="res://Scenes/Floors/Elements/ascendnew.tscn" id="9_q1mc0"]
 
 [node name="Playablenew" type="Node2D"]
 script = ExtResource("1_qafiq")
@@ -18,3 +19,4 @@ worker_generator = ExtResource("4_q1mc0")
 security_generator = ExtResource("5_mvb3p")
 player_prefab = ExtResource("6_u3avd")
 gem_prefab = ExtResource("8_mln1u")
+ascend_prefab = ExtResource("9_q1mc0")

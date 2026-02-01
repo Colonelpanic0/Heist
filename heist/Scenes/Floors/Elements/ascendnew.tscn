@@ -1,7 +1,19 @@
-[gd_scene format=3 uid="uid://bx8pbaoegnt4b"]
+[gd_scene load_steps=3 format=3 uid="uid://bx8pbaoegnt4b"]
 
-[node name="Shadow" type="ColorRect"]
-offset_left = 419.0
-offset_right = 459.0
-offset_bottom = 97.0
+[ext_resource type="Script" uid="uid://d1artm51frnqg" path="res://Scripts/ascend.gd" id="1_vgwsg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icie1"]
+size = Vector2(39, 233)
+
+[node name="ascend" type="Area2D"]
+collision_layer = 128
+script = ExtResource("1_vgwsg")
+
+[node name="Shadow" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 232.0
 color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.5, 116.5)
+shape = SubResource("RectangleShape2D_icie1")
