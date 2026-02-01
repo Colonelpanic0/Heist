@@ -4,8 +4,8 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-const POS_L = Vector2(-20,5)
-const POS_R = Vector2(20,5)
+@export var POS_L = Vector2(-20,5)
+@export var POS_R = Vector2(20,5)
 @export var looking = 1
 
 func _physics_process(delta: float) -> void:
@@ -24,11 +24,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		if direction >= 1: 
 			looking = 1
+			playerSprite.flip_h = false
 			GUN.flip_h = false
 			GUN.position.x = POS_R.x
 			
 		elif direction <= -1:
 			looking = -1 
+			playerSprite.flip_h = false
 			GUN.flip_h = true
 			GUN.position.x = POS_L.x
 			
