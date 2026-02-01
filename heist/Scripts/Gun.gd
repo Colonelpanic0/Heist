@@ -16,10 +16,14 @@ func _process(delta: float) -> void:
 		if Singleton.bullets >= 1:
 			#Fire bullet
 			var instance = bullet_prefab.instantiate() #creates an instance
-			#var parent = get_parent()
-			instance.position.x = bullet_spawn.global_position.x * player.get_looking() #+ bullet_offset.x #set position etc.
+			
+			instance.position.x = bullet_spawn.global_position.x + (bullet_offset.x * player.get_looking()) #set position etc.
 			instance.position.y = bullet_spawn.global_position.y #+ bullet_offset.y
 			instance.speed = bullet_speed * player.get_looking()
+			if player.get_looking() < 1:
+				instance.get_node("Sprite2D").flip_h = true
+			else: 
+				instance.get_node("Sprite2D").flip_h = false
 			get_parent().get_parent().add_child(instance) #adds the instance into the scene
 			pass
 		pass
