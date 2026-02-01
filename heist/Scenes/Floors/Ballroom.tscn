@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0lk6xqejg1qw"]
+[gd_scene load_steps=5 format=3 uid="uid://d0lk6xqejg1qw"]
 
 [ext_resource type="Script" uid="uid://diqpsifbqdecb" path="res://Scripts/ballroom.gd" id="1_811ex"]
 [ext_resource type="PackedScene" uid="uid://c53k8roehrn4x" path="res://Scenes/Floors/Elements/shadow.tscn" id="2_3urrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_811ex"]
 size = Vector2(1152, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3urrn"]
+size = Vector2(37, 97)
 
 [node name="Ballroom" type="Node2D"]
 script = ExtResource("1_811ex")
@@ -16,6 +19,7 @@ offset_right = 1152.0
 offset_bottom = 116.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
 position = Vector2(576, 9.5)
@@ -32,3 +36,27 @@ offset_left = 300.0
 offset_right = 340.0
 offset_bottom = 97.0
 color = Color(0.8948084, 0, 0.25459093, 1)
+
+[node name="WallLeft" type="ColorRect" parent="."]
+offset_left = -48.0
+offset_right = -11.0
+offset_bottom = 96.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallLeft"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft/StaticBody2D"]
+position = Vector2(18.5, 47.5)
+shape = SubResource("RectangleShape2D_3urrn")
+
+[node name="WallLeft2" type="ColorRect" parent="."]
+offset_left = 1170.0
+offset_right = 1207.0
+offset_bottom = 96.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallLeft2"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft2/StaticBody2D"]
+position = Vector2(18.5, 47.5)
+shape = SubResource("RectangleShape2D_3urrn")
