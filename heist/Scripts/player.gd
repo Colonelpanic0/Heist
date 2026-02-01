@@ -2,10 +2,8 @@ extends CharacterBody2D
 @export var playerSprite: AnimatedSprite2D
 @export var playerAnims: Array[SpriteFrames] = []
 @export var playerMask: Sprite2D
-@export var guestMask: Texture2D
-@export var maintneceMask: Texture2D
-@export var waiterMask: Texture2D
-@export var securtiyMask: Texture2D
+@export var masks: Array[Texture2D] = []
+
 @export var GUN: Sprite2D
 
 const SPEED = 150.0
@@ -57,7 +55,7 @@ func get_looking():
 
 # Used to update the animations
 func update_anim(name:String) -> void:
-	$DefaultSprite.play(name)
+	playerSprite.play(name)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -70,23 +68,29 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Special") and Singleton.hidden:
 		match mask:
-			Singleton.Disguise.GUEST:	
-				Singleton.mask = Singleton.Disguise.WORKER
-				
-				playerMask.texture = guestMask
+			Singleton.Disguise.GUEST:
+				mask = Singleton.Disguise.MAINTENANCE
+				playerSprite.sprite_frames = playerAnims[2]
+				update_anim("default")
+				playerMask.texture = masks[1]
 				playerMask.visible = true
-			Singleton.Disguise.WORKER:
-				Singleton.mask = Singleton.Disguise.SECURITY
-				playerMask.texture = guestMask
+			Singleton.Disguise.MAINTENANCE:	
+				mask = Singleton.Disguise.WAITER
+				update_anim("default")
+				playerMask.texture = masks[2]
 				playerMask.visible = true	
-			Singleton.Disguise.SECURITY:
-				Singleton.mask = Singleton.Disguise.GUEST
-				playerMask.texture = guestMask
+			Singleton.Disguise.WAITER:	
+				mask = Singleton.Disguise.SECURITY
+				playerMask.texture = masks[3]
+				playerMask.visible = true	
+			Singleton.Disguise.SECURITY:	
+				mask = Singleton.Disguise.GUEST
+				playerMask.texture = masks[0]
 				playerSprite.sprite_frames = playerAnims[1]
 				playerMask.visible = true
-			_:
+			_:	
 				Singleton.mask = Singleton.Disguise.GUEST
-				playerMask.texture = guestMask
+				playerMask.texture = masks[0]
 				playerSprite.sprite_frames = playerAnims[1]
 				playerMask.visible = true
 				

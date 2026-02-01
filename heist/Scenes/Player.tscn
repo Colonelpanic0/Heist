@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp2fklmpdt0mk"]
+[gd_scene load_steps=15 format=3 uid="uid://cp2fklmpdt0mk"]
 
 [ext_resource type="Script" uid="uid://bslnuks1opjgj" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="SpriteFrames" uid="uid://c1t0i077cccij" path="res://Sprites/Player/Default/Player_Default_Animation.tres" id="2_5ixxa"]
@@ -11,6 +11,8 @@
 [ext_resource type="SpriteFrames" uid="uid://c1hblwbtg8kbc" path="res://Sprites/Player/Waiter/player_waiter_anim.tres" id="5_miouo"]
 [ext_resource type="PackedScene" uid="uid://dm4g5rmvjoln" path="res://Scenes/Bullet.tscn" id="5_nn08x"]
 [ext_resource type="SpriteFrames" uid="uid://jhegdbxygxeo" path="res://Sprites/Player/Security/player_security_anim.tres" id="6_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://bj26eicuhuu0c" path="res://Sprites/Masks/waiter_mask.png" id="9_miouo"]
+[ext_resource type="Texture2D" uid="uid://b04jxihuyauyj" path="res://Sprites/Masks/security_mask.png" id="10_o3h8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
 size = Vector2(30, 50)
@@ -18,16 +20,16 @@ size = Vector2(30, 50)
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerSprite", "playerMask", "GUN")]
 collision_mask = 19
 script = ExtResource("1_kyqiw")
-playerSprite = NodePath("AnimatedSprite2D")
+playerSprite = NodePath("DefaultSprite")
 playerAnims = Array[SpriteFrames]([ExtResource("2_5ixxa"), ExtResource("3_ksbbd"), ExtResource("4_glx4g"), ExtResource("5_miouo"), ExtResource("6_o3h8g")])
 playerMask = NodePath("Mask")
-guestMask = ExtResource("3_nn08x")
-maintneceMask = ExtResource("3_52ee3")
+masks = Array[Texture2D]([ExtResource("3_nn08x"), ExtResource("3_52ee3"), ExtResource("9_miouo"), ExtResource("10_o3h8g")])
 GUN = NodePath("GUN")
 POS_L = Vector2(-4, 27)
 POS_R = Vector2(33, 27)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="DefaultSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(14, 24)
 sprite_frames = ExtResource("2_5ixxa")
 animation = &"walk"
