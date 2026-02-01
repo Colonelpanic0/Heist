@@ -56,7 +56,6 @@ func _process(delta):
 					_game_over()
 				else:
 					get_tree().change_scene_to_file("res://Scenes/playablenew.tscn")
-					timer = 100
 
 func _game_over():
 	gamestart = false
